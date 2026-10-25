@@ -69,5 +69,9 @@
           };
         }
       );
+
+      # Buildbot's supported PR architecture gates the same package derivation
+      # exposed to consumers; no synthetic test derivation is added.
+      checks.x86_64-linux.default = self.packages.x86_64-linux.opencode;
     };
 }
