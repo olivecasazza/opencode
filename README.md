@@ -124,12 +124,14 @@ If you're interested in contributing to OpenCode, please read our [contributing 
 
 If you are working on a project that's related to OpenCode and is using "opencode" as part of its name, for example "opencode-dashboard" or "opencode-mobile", please add a note to your README to clarify that it is not built by the OpenCode team and is not affiliated with us in any way.
 
-## Nix CI
+## Nix CI and Hydra
 
-The flake exposes `checks.x86_64-linux.default` as the same
-`packages.x86_64-linux.opencode` derivation used by consumers. Buildbot gates
-that existing package on the supported Linux architecture; all declared
-multi-system package outputs remain unchanged.
+The flake exposes `checks.x86_64-linux.default` and
+`hydraJobs.x86_64-linux.opencode` as the same
+`packages.x86_64-linux.opencode` derivation. Buildbot gates the package on the
+supported Linux architecture; Hydra is the canonical artifact producer when
+the service is healthy. All declared multi-system package outputs remain
+unchanged.
 
 ---
 

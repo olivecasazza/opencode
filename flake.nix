@@ -73,5 +73,8 @@
       # Buildbot's supported PR architecture gates the same package derivation
       # exposed to consumers; no synthetic test derivation is added.
       checks.x86_64-linux.default = self.packages.x86_64-linux.opencode;
+      # Hydra's canonical x86 artifact is the same package derivation; this
+      # does not create a new recipe or alter the multi-system package API.
+      hydraJobs.x86_64-linux.opencode = self.packages.x86_64-linux.opencode;
     };
 }
